@@ -1,5 +1,5 @@
 # elasticsearch
-# A simple web app to query a document using elasticsearch
+ A simple web app to query a document using elasticsearch
 
 # elasticsearch/mysite/search/views.py will read data off of the HTML page and send it to the corresponding search function
 # it also queries the ES document to send information about the document to the HTML page such as number of documents.
