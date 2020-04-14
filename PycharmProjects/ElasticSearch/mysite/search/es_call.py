@@ -70,10 +70,10 @@ def name_info(index):
         results.append(name.key)
     return results
 
-
+# upload a document to an index or create a new one
 def index_document(uploaded_file, index_name):
     create_index(index_name)
-    message = ""
+    # for each line, add to document
     def gendata():
         with jsonlines.open(uploaded_file, mode='r') as reader:
             for line in reader:
@@ -82,6 +82,7 @@ def index_document(uploaded_file, index_name):
                     "_type": "_doc",
                     "_source": line,
                 }
+    # use bulk api to index document
     helpers.bulk(client, gendata())
 
 
