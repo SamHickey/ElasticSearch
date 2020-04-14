@@ -89,6 +89,7 @@ def search_index(request):
     return render(request,  'search/index.html',  context)
 
 
+# convert date format
 def daterange(start, end):
     start_date = start.split('T')[0]
     start_time = start.split('T')[1]
